@@ -1,5 +1,20 @@
-# NB! The service has not been tested yet due to unavailability of MAX bot creation functionality.
-# ВНИМАНИЕ! Сервис пока не тестировался, т.к. в MAX недоступно создание ботов.
+## PSA! | ВНИМАНИЕ!
+
+The service has not been tested yet due to unavailability of MAX bot creation functionality.
+
+Сервис пока не тестировался, т.к. в MAX недоступно создание ботов.
+
+---
+
+## Backlog | Бэклог
+
+• User pairing via bots using refcodes | Сведение пользователей внутри ботов через рефкоды
+
+• Chats with multiple users support | Поддержка чатов с несколькими пользователями
+
+• Group chats and channels support | Поддержка групповых чатов и каналов
+
+---
 
 # English (Русский текст ниже)
 
