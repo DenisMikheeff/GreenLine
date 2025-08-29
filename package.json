@@ -1,5 +1,5 @@
 {
-  "name": "green-line",
+  "name": "greenline",
   "version": "1.0.0",
   "description": "Cloud bridge for MAX ↔ Telegram",
   "main": "index.js",
