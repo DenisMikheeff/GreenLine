@@ -1,5 +1,5 @@
-#NB! The service has not been tested yet due to unavailability of MAX bot creation functionality.
-#ВНИМАНИЕ! Сервис пока не тестировался, т.к. в MAX недоступно создание ботов.
+# NB! The service has not been tested yet due to unavailability of MAX bot creation functionality.
+# ВНИМАНИЕ! Сервис пока не тестировался, т.к. в MAX недоступно создание ботов.
 
 # English (Русский текст ниже)
 
