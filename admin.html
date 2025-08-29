@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bridge Admin Panel</title>
+  <style>
+    body { font-family: sans-serif; background: #f6f6f6; margin: 3em; }
+    input, button { margin: 0.3em; padding: 0.3em; }
+    label { margin-top: 1em; }
+    .pair-list { background: #fff; padding: 1em; border-radius: 6px; box-shadow: 0 2px 10px #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Admin Panel: Pair MAX & Telegram Users</h1>
+  <form id="pairForm">
+    <label>Admin Password: <input type="password" id="adminPass" required /></label>
+    <label>MAX User ID: <input type="text" id="maxId" required /></label>
+    <label>Telegram User ID: <input type="text" id="tgId" required /></label>
+    <button type="submit">Add Pair</button>
+  </form>
+  <h2>Existing Pairs</h2>
+  <div id="pairs" class="pair-list"></div>
+
+  <script>
+    let adminPassword = '';
+    async function fetchPairs() {
+      let res = await fetch('/admin/pairs?password=' + encodeURIComponent(adminPassword));
+      let pairs = await res.json();
+      let html = pairs
+        .map(([max, tg]) => `<div>MAX: <b>${max}</b> ⇄ Telegram: <b>${tg}</b> <button onclick="removePair('${max}')">Remove</button></div>`)
+        .join('');
+      document.getElementById('pairs').innerHTML = html || 'None yet.';
+    }
+    async function removePair(maxId) {
+      await fetch('/admin/pairs/' + maxId + '?password=' + encodeURIComponent(adminPassword), { method: 'DELETE' });
+      fetchPairs();
+    }
+    document.getElementById('pairForm').onsubmit = async (e) => {
+      e.preventDefault();
+      adminPassword = document.getElementById('adminPass').value.trim();
+      let maxId = document.getElementById('maxId').value.trim();
+      let tgId = document.getElementById('tgId').value.trim();
+      await fetch('/admin/pairs?password=' + encodeURIComponent(adminPassword), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ maxId, tgId })
+      });
+      document.getElementById('maxId').value = '';
+      document.getElementById('tgId').value = '';
+      fetchPairs();
+    };
+    fetchPairs();
+  </script>
+</body>
+</html>
