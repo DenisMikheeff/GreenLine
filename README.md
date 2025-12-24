@@ -1,8 +1,10 @@
 ## PSA! | ВНИМАНИЕ!
 
 The service has not been tested yet due to unavailability of MAX bot creation functionality.
+UPD. As of now, MAX bot creation is only available for verified legal entities in Russia – hence work on this project is paused until further notice.
 
 Сервис пока не тестировался, т.к. в MAX недоступно создание ботов.
+UPD. На данный момент создание ботов доступно только верифицированным юрлицам РФ, в связи с чем работа над проектом приостанавливается до дальнейшего уведомления.
 
 ---
 
